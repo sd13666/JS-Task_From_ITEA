@@ -1,0 +1,21 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+html {
+  background-color: aquamarine;
+}
+.title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height:auto;
+  margin:50px;
+  padding: 20px 20px;
+  border-radius: 10px;
+  background-color: aqua;
+  box-shadow: 0px 0px 20px 12px rgba(0,0,0,0.2);
+}
+.main_title {
+  text-align: center;
+}
