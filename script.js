@@ -67,3 +67,49 @@
 // --------------------------
 
 //---- #4 -------
+// let a = 0;
+// let ggg;
+
+// if (a > 0) {
+//   ggg = function() {
+//     console.log("один!");
+//   };
+// } else {
+//   ggg = function() {
+//     console.log("два!");
+//   };
+// }
+
+// ggg();
+// --------------------------
+
+//---- #5 -------
+// function ggg(a, b) {
+//   return a()  + b();
+// }
+
+// let sum = ggg(
+//   () => 3,
+//   () => 4
+// );
+
+// console.log(sum);
+// --------------------------
+
+//---- #6 -------
+// let arr1 = [1, 2, 3];
+// let arr2 = [1, 2, 3];
+
+// function compareTwoArrays (arr1, arr2) {
+// if (arr1.length !== arr2.length) {
+//   return false;
+// }
+// for (let i = 0; i < arr1.length; i++) {
+//   if (arr1[i] !== arr2[i]) {
+//     return false;
+//   }
+// }
+// return true;
+// }
+// console.log(compareTwoArrays(arr1, arr2))
+//------------------------------
