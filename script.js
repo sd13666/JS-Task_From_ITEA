@@ -48,11 +48,22 @@
 //       return word;
 //     }
 //     return word.charAt(0).toUpperCase() + word.slice(1);
-//   }).join('')); 
+//   }).join(''));
 // }
 
 // firstLetterToUpperCase('var_text_hello');
 // --------------------------
+// function firstLetterToUpperCase(str) {
+//   str = str.split("_");
+
+//   return str
+//     .map(function (word, index) {
+//       return word.charAt(0).toUpperCase() + word.slice(1);
+//     })
+//     .join("");
+// }
+
+// console.log(firstLetterToUpperCase("var_text_hello"));
 
 //---- #3 -------
 // function arrOfX () {
@@ -116,13 +127,62 @@
 
 //---- #7 -------
 // const arr = [1, 2, 3, 4, 5];
-//
-// function dividedArr (arr, divide) {
+
+// function dividedArr(arr, divide) {
 //   const dividedArr = [];
 //   for (let i = 0; i < arr.length; i += divide) {
-//     dividedArr.push(arr.slice(i, i + divide))
+//     dividedArr.push(arr.slice(i, i + divide));
 //   }
 //   return console.log(dividedArr);
-// };
-//
-// divideArr(arr, 2);
+// }
+
+// dividedArr(arr, 2);
+//---------------------------------
+//---------------------------------
+//---------------------------------
+//---------------------------------
+/*Проблема полягає в тому, що функція fetch є асинхронною, 
+тому users.map виконується раніше, ніж дані будуть доступні. 
+Вам потрібно змінити ваш підхід до роботи з асинхронними запитами.
+
+Один зі способів вирішення цієї проблеми - включити виклик
+методу map у область дії другого обіцянки (promise) (в then). 
+Ось як ви можете це зробити: */
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => response.json())
+  .then(json => {
+    let users = json;
+    users.map(user => console.log(user))
+  });
+  /*Цей підхід забезпечить вам доступність даних для подальшої
+  обробки через метод map після завершення асинхронного запиту.*/
+// console.log(fetch('https://jsonplaceholder.typicode.com/todos/1')
+// .then(response => response.json())
+// .then(json => console.log(json)))
+let users = [
+  {
+      id: 1,
+      name: "asdasd",
+      age: 19
+  },
+  {
+      id: 2,
+      name: "asdasd",
+      age: 19
+  },
+  {
+      id: 3,
+      name: "asdasd",
+      age: 19
+  }
+];
+
+// fetch('https://jsonplaceholder.typicode.com/todos')
+//       .then(response => response.json())
+// fetch('https://jsonplaceholder.typicode.com/posts')
+//       .then(response => response.json())
+users = fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(json => {let users = json;})
+
+users.map(user => console.log(user))
