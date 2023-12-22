@@ -181,8 +181,8 @@ let users = [
 //       .then(response => response.json())
 // fetch('https://jsonplaceholder.typicode.com/posts')
 //       .then(response => response.json())
-users = fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then(json => {let users = json;})
+// users = fetch('https://jsonplaceholder.typicode.com/users')
+//     .then(response => response.json())
+//     .then(json => {let users = json;})
 
-users.map(user => console.log(user))
+// users.map(user => console.log(user))
